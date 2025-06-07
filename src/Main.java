@@ -1,13 +1,6 @@
 import entity.FiscalCode;
 import entity.User;
-import utility.InputReader;
-
-import java.io.Console;
-import java.time.LocalDate;
-import java.time.chrono.ChronoLocalDate;
-import java.util.ArrayList;
-import java.util.Locale;
-import java.util.Scanner;
+import controller.InputReader;
 
 //Dopo aver sistemato tutte le classi ed aver completato quasi totalmente il progetto inserire metodo che calcola
 //tutti i codici fiscali possibili in modo da riconoscere ogni possibile codice fiscale esistente
