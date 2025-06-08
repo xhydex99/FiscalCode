@@ -5,11 +5,7 @@ import java.util.Scanner;
 public class InputReader {
     protected final Scanner scanner = new Scanner(System.in);
 
-    public Scanner getScanner() {
-        return scanner;
-    }
-
-    public static String insertName(Scanner scanner){
+    public String insertName(){
         System.out.println("Insert your name:");
         String retvalue = scanner.nextLine();
         return retvalue;
