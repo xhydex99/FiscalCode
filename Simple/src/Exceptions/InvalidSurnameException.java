@@ -1,4 +1,4 @@
-package Exceptions;
+package exceptions;
 
 public class InvalidSurnameException extends RuntimeException {
     public InvalidSurnameException(String message) {

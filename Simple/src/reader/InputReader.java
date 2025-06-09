@@ -1,4 +1,4 @@
-package controller;
+package reader;
 
 import java.util.Scanner;
 

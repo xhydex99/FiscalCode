@@ -1,4 +1,4 @@
-package Exceptions;
+package exceptions;
 
 public class InvalidBirthdateException extends RuntimeException {
     public InvalidBirthdateException(String message) {

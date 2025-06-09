@@ -1,6 +1,6 @@
 import entity.FiscalCode;
 import entity.User;
-import controller.InputReader;
+import reader.InputReader;
 
 //Dopo aver sistemato tutte le classi ed aver completato quasi totalmente il progetto inserire metodo che calcola
 //tutti i codici fiscali possibili in modo da riconoscere ogni possibile codice fiscale esistente

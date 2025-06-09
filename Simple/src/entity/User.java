@@ -1,14 +1,10 @@
 package entity;
 
-import Exceptions.*;
+import exceptions.*;
 
-import java.sql.SQLOutput;
-import java.text.DateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.ArrayList;
-import java.util.Locale;
 
 public class User {
     //eliminato attributo fiscalCode
