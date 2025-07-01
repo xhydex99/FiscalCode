@@ -6,7 +6,6 @@ import io.javalin.Javalin;
 import io.javalin.http.HttpStatus;
 import io.javalin.json.JavalinJackson;
 
-
 //Controllare gli stati esteri nel json comune
 //Codice Fiscale Straniero Comune ***** Provincia (EE)
 public class Main {
@@ -30,3 +29,4 @@ public class Main {
         app.start(7000);
     }
 }
+
