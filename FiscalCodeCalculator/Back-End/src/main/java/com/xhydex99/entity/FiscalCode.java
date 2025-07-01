@@ -175,6 +175,7 @@ public class FiscalCode {
         }
         return retvalue;
     }
+    //inserire data parser qui o cambiare check user
 
     private static String bdCode(LocalDate birthdate, String gender) {
         String retvalue = "";

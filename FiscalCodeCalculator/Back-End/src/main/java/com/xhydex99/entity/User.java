@@ -2,25 +2,25 @@ package com.xhydex99.entity;
 
 import com.xhydex99.excpetion.*;
 
-import java.sql.SQLOutput;
-import java.text.DateFormat;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.ArrayList;
-import java.util.Locale;
 
 public class User {
     //eliminato attributo fiscalCode
-    private String name, surname, city, gender, provincia;
-    private LocalDate birthdate;
+    private String name, surname, city, gender, provincia, birthdate;
+    private LocalDate birthdateDate;
 
-    public User(String name, String surname, String city, String gender, String birthdate, String provincia) {
+    public User() {
+    }
+
+    public void checkUser() throws InvalidNameException,InvalidSurnameException,InvalidCityException, InvalidGenderException, InvalidProvinciaException, InvalidBirthdateException {
         this.name = checkName(name);
         this.surname = checkSurname(surname);
         this.city = checkCity(city);
         this.gender = checkGender(gender);
-        this.birthdate = checkBirthdate(birthdate);
+        this.birthdateDate = checkBirthdate(birthdate);
         this.provincia = checkProvincia(provincia);
 
     }
@@ -120,7 +120,7 @@ public class User {
     }
 
     public LocalDate getBirthdate() {
-        return birthdate;
+        return birthdateDate;
     }
     //inserire i controlli e la correzione di tutti gli input dell'utente
 }
