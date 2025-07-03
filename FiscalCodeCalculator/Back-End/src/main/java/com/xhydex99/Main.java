@@ -1,7 +1,9 @@
 package com.xhydex99;
+
 import com.xhydex99.controller.InputReader;
 import com.xhydex99.entity.User;
 import com.xhydex99.entity.FiscalCode;
+import com.xhydex99.excpetion.InvalidBirthdateException;
 import io.javalin.Javalin;
 import io.javalin.http.HttpStatus;
 import io.javalin.json.JavalinJackson;
@@ -10,23 +12,24 @@ import io.javalin.json.JavalinJackson;
 //Codice Fiscale Straniero Comune ***** Provincia (EE)
 public class Main {
     public static void main(String[] args) {
-        Javalin app = Javalin.create(cfg ->{
+        Javalin app = Javalin.create(cfg -> {
             cfg.jsonMapper(new JavalinJackson());
         });
 
         app.post("/calculate", ctx -> {
-            String fiscalCode = null;
-            try {
-                User user = ctx.bodyAsClass(User.class);
-                user.checkUser();
-                fiscalCode = FiscalCode.createFiscalCode(user);
-            } catch (Exception e) {
-                ctx.status(HttpStatus.BAD_REQUEST).result(e.getMessage());
-
-            }
+            User user = ctx.bodyAsClass(User.class);
+            user.checkUser();
+            System.out.println(FiscalCode.createFiscalCode(user));
+            String fiscalCode = FiscalCode.createFiscalCode(user);
             ctx.status(HttpStatus.ACCEPTED).result(fiscalCode);
+        });
+
+        app.exception(Exception.class, (exception, ctx) -> {
+            ctx.status(409).result(exception.getMessage());
         });
         app.start(7000);
     }
+
+
 }
 
